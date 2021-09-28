@@ -48,10 +48,6 @@ class User
      */
     private $region;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-
     public function getId(): ?int
     {
         return $this->id;
@@ -128,5 +124,8 @@ class User
 
         return $this;
     }
-
+    // public function __toString(): string
+    // {
+    //     return $this->city.' '.$this->year; 
+    // }
 }
