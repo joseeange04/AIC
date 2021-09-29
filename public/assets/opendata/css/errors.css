@@ -1,0 +1,46 @@
+section {
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 100vh;
+}
+
+section:nth-of-type(2n) {
+    background-color: #FE4B74;
+}
+
+.error-page {
+    height: 90vh;
+}
+
+.content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 3em;
+    display: block;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+a {
+    font-weight: 700;
+    color: #373B44;
+    position: relative;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+a:active {
+    top: 1px;
+}

@@ -105,7 +105,7 @@ class Donnee
         $this->region = $region;
 
         return $this;
-    }
+    } 
 
     /**
      * @return Collection|PieceJointe[]
