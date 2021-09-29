@@ -105,6 +105,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setRoles(array $roles): self
     {
+        if (count($roles) == 0) {
+            $roles[0] = 'ROLE_USER';
+        }
         $this->roles = $roles;
 
         return $this;

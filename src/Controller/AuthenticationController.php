@@ -7,6 +7,7 @@ use App\Form\RegistrationType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AuthenticationController extends AbstractController
@@ -33,11 +34,12 @@ class AuthenticationController extends AbstractController
     /**
      * @Route("/register", name="register-page")
      */
-    public function register(): Response
+    public function register(Request $request): Response
     {
         $user = new User();
 
         $form = $this->createForm(RegistrationType::class, $user);
+        
 
         return $this->render('authentication/register.html.twig', [
             'form' => $form->createView()

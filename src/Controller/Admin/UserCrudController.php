@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 
 class UserCrudController extends AbstractCrudController
@@ -35,6 +36,7 @@ class UserCrudController extends AbstractCrudController
         yield EmailField::new('email');
         yield TelephoneField::new('telephone');
         yield TextField::new('password')->setFormType(PasswordType::class);
+        yield ArrayField::new('roles');
     }
 
 }
