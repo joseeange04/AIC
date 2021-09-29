@@ -40,6 +40,21 @@ class Culture
     private $calendrier;
 
     /**
+     * @ORM\OneToOne(targetEntity=Plantation::class, mappedBy="culture", cascade={"persist", "remove"})
+     */
+    private $plantation;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Floraison::class, mappedBy="culture", cascade={"persist", "remove"})
+     */
+    private $floraison;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Recolte::class, mappedBy="culture", cascade={"persist", "remove"})
+     */
+    private $recolte;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Concerner::class, inversedBy="culture")
      */
 
@@ -147,6 +162,57 @@ class Culture
                 $calendrier->setCulture(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPlantation(): ?Plantation
+    {
+        return $this->plantation;
+    }
+
+    public function setPlantation(Plantation $plantation): self
+    {
+        // set the owning side of the relation if necessary
+        if ($plantation->getCulture() !== $this) {
+            $plantation->setCulture($this);
+        }
+
+        $this->plantation = $plantation;
+
+        return $this;
+    }
+
+    public function getFloraison(): ?Floraison
+    {
+        return $this->floraison;
+    }
+
+    public function setFloraison(Floraison $floraison): self
+    {
+        // set the owning side of the relation if necessary
+        if ($floraison->getCulture() !== $this) {
+            $floraison->setCulture($this);
+        }
+
+        $this->floraison = $floraison;
+
+        return $this;
+    }
+
+    public function getRecolte(): ?Recolte
+    {
+        return $this->recolte;
+    }
+
+    public function setRecolte(Recolte $recolte): self
+    {
+        // set the owning side of the relation if necessary
+        if ($recolte->getCulture() !== $this) {
+            $recolte->setCulture($this);
+        }
+
+        $this->recolte = $recolte;
 
         return $this;
     }

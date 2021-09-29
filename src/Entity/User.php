@@ -51,7 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $telephone;
 
     /**
-     * @ORM\OneToOne(targetEntity=Region::class, inversedBy="user", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
      */
     private $region;
@@ -190,7 +190,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->region;
     }
 
-    public function setRegion(Region $region): self
+    public function setRegion(?Region $region): self
     {
         $this->region = $region;
 

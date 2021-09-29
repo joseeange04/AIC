@@ -5,7 +5,7 @@ security:
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
         App\Entity\User:
-            algorithm: auto
+            algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -19,8 +19,17 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            lazy: true
+            lazy: true 
+
             provider: app_user_provider
+
+            form_login:
+                login_path: login-page
+                check_path: login-page
+            
+            logout:
+                path: logout-page
+                target: homepage
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

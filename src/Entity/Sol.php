@@ -23,14 +23,24 @@ class Sol
     private $constituants;
 
     /**
-     * @ORM\Column(type="float")
-     */
-    private $pourcentage;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Donnee::class, inversedBy="sol")
      */
     private $donnee;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $argile;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $limon;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $sable;
 
     public function getId(): ?int
     {
@@ -49,18 +59,6 @@ class Sol
         return $this;
     }
 
-    public function getPourcentage(): ?float
-    {
-        return $this->pourcentage;
-    }
-
-    public function setPourcentage(float $pourcentage): self
-    {
-        $this->pourcentage = $pourcentage;
-
-        return $this;
-    }
-
     public function getDonnee(): ?Donnee
     {
         return $this->donnee;
@@ -69,6 +67,42 @@ class Sol
     public function setDonnee(?Donnee $donnee): self
     {
         $this->donnee = $donnee;
+
+        return $this;
+    }
+
+    public function getArgile(): ?float
+    {
+        return $this->argile;
+    }
+
+    public function setArgile(?float $argile): self
+    {
+        $this->argile = $argile;
+
+        return $this;
+    }
+
+    public function getLimon(): ?float
+    {
+        return $this->limon;
+    }
+
+    public function setLimon(?float $limon): self
+    {
+        $this->limon = $limon;
+
+        return $this;
+    }
+
+    public function getSable(): ?float
+    {
+        return $this->sable;
+    }
+
+    public function setSable(?float $sable): self
+    {
+        $this->sable = $sable;
 
         return $this;
     }
