@@ -23,9 +23,10 @@ class Temperature
     private $valeur;
 
     /**
-     * @ORM\OneToOne(targetEntity=Donnee::class, mappedBy="temperature", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Donnee::class, inversedBy="temperature")
      */
     private $donnee;
+
 
     public function getId(): ?int
     {
@@ -49,15 +50,11 @@ class Temperature
         return $this->donnee;
     }
 
-    public function setDonnee(Donnee $donnee): self
+    public function setDonnee(?Donnee $donnee): self
     {
-        // set the owning side of the relation if necessary
-        if ($donnee->getTemperature() !== $this) {
-            $donnee->setTemperature($this);
-        }
-
         $this->donnee = $donnee;
 
         return $this;
     }
+
 }

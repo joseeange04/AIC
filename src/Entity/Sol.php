@@ -28,7 +28,7 @@ class Sol
     private $pourcentage;
 
     /**
-     * @ORM\OneToOne(targetEntity=Donnee::class, mappedBy="sol", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Donnee::class, inversedBy="sol")
      */
     private $donnee;
 
@@ -68,18 +68,9 @@ class Sol
 
     public function setDonnee(?Donnee $donnee): self
     {
-        // unset the owning side of the relation if necessary
-        if ($donnee === null && $this->donnee !== null) {
-            $this->donnee->setSol(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($donnee !== null && $donnee->getSol() !== $this) {
-            $donnee->setSol($this);
-        }
-
         $this->donnee = $donnee;
 
         return $this;
     }
+
 }

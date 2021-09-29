@@ -30,11 +30,6 @@ class Region
     private $nom;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, mappedBy="region", cascade={"persist", "remove"})
-     */
-    private $user;
-
-    /**
      * @ORM\OneToOne(targetEntity=Donnee::class, inversedBy="region", cascade={"persist", "remove"})
      */
     private $donnee;
@@ -43,6 +38,11 @@ class Region
      * @ORM\ManyToMany(targetEntity=Culture::class, mappedBy="regions")
      */
     private $cultures;
+
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, mappedBy="region", cascade={"persist", "remove"})
+     */
+    private $user;
 
     public function __construct()
     {
@@ -74,23 +74,6 @@ class Region
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(User $user): self
-    {
-        // set the owning side of the relation if necessary
-        if ($user->getRegion() !== $this) {
-            $user->setRegion($this);
-        }
-
-        $this->user = $user;
 
         return $this;
     }
@@ -136,6 +119,23 @@ class Region
     public function __toString(): string
     {
         return $this->nom; 
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        // set the owning side of the relation if necessary
+        if ($user->getRegion() !== $this) {
+            $user->setRegion($this);
+        }
+
+        $this->user = $user;
+
+        return $this;
     }
 
 }

@@ -35,24 +35,37 @@ class Donnee
     private $pieceJointes;
 
     /**
-     * @ORM\OneToOne(targetEntity=Temperature::class, inversedBy="donnee", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity=Temperature::class, mappedBy="donnee")
      */
     private $temperature;
 
     /**
-     * @ORM\OneToOne(targetEntity=Sol::class, inversedBy="donnee", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=Precipitation::class, mappedBy="donnee")
+     */
+    private $precipitation;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Sol::class, mappedBy="donnee")
      */
     private $sol;
 
     /**
-     * @ORM\OneToOne(targetEntity=Precipitation::class, inversedBy="donnee", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Month::class, inversedBy="donnees")
      */
-    private $precipitation;
+    private $mois;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Year::class, inversedBy="donnees")
+     */
+    private $annee;
+
 
     public function __construct()
     {
         $this->pieceJointes = new ArrayCollection();
+        $this->temperature = new ArrayCollection();
+        $this->precipitation = new ArrayCollection();
+        $this->sol = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -156,6 +169,96 @@ class Donnee
     public function setPrecipitation(?Precipitation $precipitation): self
     {
         $this->precipitation = $precipitation;
+
+        return $this;
+    }
+
+    public function addTemperature(Temperature $temperature): self
+    {
+        if (!$this->temperature->contains($temperature)) {
+            $this->temperature[] = $temperature;
+            $temperature->setDonnee($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTemperature(Temperature $temperature): self
+    {
+        if ($this->temperature->removeElement($temperature)) {
+            // set the owning side to null (unless already changed)
+            if ($temperature->getDonnee() === $this) {
+                $temperature->setDonnee(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function addPrecipitation(Precipitation $precipitation): self
+    {
+        if (!$this->precipitation->contains($precipitation)) {
+            $this->precipitation[] = $precipitation;
+            $precipitation->setDonnee($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrecipitation(Precipitation $precipitation): self
+    {
+        if ($this->precipitation->removeElement($precipitation)) {
+            // set the owning side to null (unless already changed)
+            if ($precipitation->getDonnee() === $this) {
+                $precipitation->setDonnee(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function addSol(Sol $sol): self
+    {
+        if (!$this->sol->contains($sol)) {
+            $this->sol[] = $sol;
+            $sol->setDonnee($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSol(Sol $sol): self
+    {
+        if ($this->sol->removeElement($sol)) {
+            // set the owning side to null (unless already changed)
+            if ($sol->getDonnee() === $this) {
+                $sol->setDonnee(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getMois(): ?Month
+    {
+        return $this->mois;
+    }
+
+    public function setMois(?Month $mois): self
+    {
+        $this->mois = $mois;
+
+        return $this;
+    }
+
+    public function getAnnee(): ?Year
+    {
+        return $this->annee;
+    }
+
+    public function setAnnee(?Year $annee): self
+    {
+        $this->annee = $annee;
 
         return $this;
     }

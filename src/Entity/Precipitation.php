@@ -23,9 +23,10 @@ class Precipitation
     private $taux;
 
     /**
-     * @ORM\OneToOne(targetEntity=Donnee::class, mappedBy="precipitation", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Donnee::class, inversedBy="precipitation")
      */
     private $donnee;
+
 
     public function getId(): ?int
     {
@@ -51,18 +52,9 @@ class Precipitation
 
     public function setDonnee(?Donnee $donnee): self
     {
-        // unset the owning side of the relation if necessary
-        if ($donnee === null && $this->donnee !== null) {
-            $this->donnee->setPrecipitation(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($donnee !== null && $donnee->getPrecipitation() !== $this) {
-            $donnee->setPrecipitation($this);
-        }
-
         $this->donnee = $donnee;
 
         return $this;
     }
+
 }
