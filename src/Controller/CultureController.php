@@ -29,5 +29,4 @@ class CultureController extends AbstractController
             'images' => $images 
         ]);
     }
-
 }
