@@ -51,7 +51,7 @@ class FooController extends AbstractController
             'donnee' => $donnee,
             'temperature' => $temperature,
             'precipitation' => $precipitation,
-            'sol'=> $sol
+            'sol'=> $sol 
         ]);
     }
 

@@ -30,10 +30,10 @@
     </nav>
   </header>
   <!-- heropage -->
-  <div id="all">
+  <div id="home">
     <div class="heroPage">
-      <h1>NETMET Oragnisation</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quae rem consectetur</p>
+      <h1>NETMET Organisation</h1>
+      <p>Oeuvrons ensemble dans l'agriculture intelligente</p>
     </div>
 
   <!-- Menu pour tous  -->
@@ -44,7 +44,9 @@
           <img class="card-img-top" v-bind:src="menu.source" alt="Card image cap">
 
           <div class="body-card">
-          <h2 class="card-title"><a v-bind:href="menu.ref">{{ menu.titre }}</a></h2>
+          {% verbatim %}
+                <h2 class="card-title"><a v-bind:href="menu.ref">{{ menu.titre }}</a></h2>
+          {% endverbatim %}
           </div>
         </div>
         <div class="col-md-2"></div>
@@ -79,7 +81,10 @@
           </button>
           <div v-for="item in connaissances">
             <iframe width="560" height="315" :src="item.source" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h5>{{ item.subtitle }}</h5>
+            {% verbatim %}
+                <h5>{{ item.subtitle }}</h5>               
+            {% endverbatim %}
+
           </div>
         </div>
         <div class="col-sm-4 cardmenu">

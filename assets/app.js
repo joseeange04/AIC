@@ -14,7 +14,7 @@ import './bootstrap';
 import Vue from 'vue'
 
 var app = new Vue({
-    el: "#all",
+    el: "#home",
     data: {  
     menus : [
         {
@@ -47,5 +47,31 @@ var app = new Vue({
         }
     ]
 
+    }
+})
+
+var app = new Vue({
+    el: "#all",
+    data: {
+    menus : [
+        {
+        titre:"Listes des specialistes",
+        texte: "Vous aider pour les cultures que vous voulez",
+        source:"../assets/itineraire.jpg",
+        ref:"listevulga.html"
+        },
+        {
+        titre:"Nos données brutes",
+        texte: "Pour vous guider avec le changement de climat et la plantation",
+        source:"../assets/calendrier1.png",
+        ref:"donneesbrutes.html"
+        },
+        {
+        titre:"Nos données traitées",
+        texte: "Avoir les bonnes techniques pour vos plantations",
+        source:"../assets/technique.jpg",
+        ref:"donnestraites.html"
+        }
+    ],
     }
 })

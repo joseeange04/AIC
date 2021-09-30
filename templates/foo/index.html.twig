@@ -1,20 +1,84 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>AIC espaces pour vilgalisateurs</title>
+</head>
+<body id="container">
+  <!--  en tête et menu de langue -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link" href="#">Acceuil</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Manager</a>
+            </li>
+        </ul>
+        <ul class="my-2 my-lg-0 navbar-nav traduction">
+            <li class="mr-sm-2"><img src="../assets/madagascar.png" alt="fr" width="20" height="20"><a href="">ML</a></li>
+            <li class="mr-sm-2"><img src="../assets/france.png" alt="fr" width="20" height="20"><a href="">FR</a></li>
+            <li class="my-2 my-sm-0"><img src="../assets/royaume-uni.png" alt="fr" width="20" height="20"><a href="">EN</a></li>
+        </ul>
+        </nav>
+    </header> 
+     <!-- heropage -->
+  <div id="all">
+    <div class="heroPage1">
+      <h1>NETMET Organisation</h1>
+      <p>Oeuvrons ensemble dans l'agriculture intelligente</p>
+    </div>
 
-{% block title %}Hello FooController!{% endblock %}
+  <!-- Menu pour tous  -->
+    <div class="row menu">
+      <div class="col-md-2"></div>
+      <div class="col-md-2" v-for="menu in menus">
+        <div class="card">
+          <img class="card-img-top" v-bind:src="menu.source" alt="Card image cap">
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+          <div class="body-card">
+          {% verbatim %}
+          <h2 class="card-title"><a v-bind:href="menu.ref">{{ menu.titre }}</a></h2>
+          {% endverbatim %}
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/media/fabien/ANDROMEDE/Projet/AIC/src/Controller/FooController.php'|file_link(0) }}">src/Controller/FooController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/media/fabien/ANDROMEDE/Projet/AIC/templates/foo/index.html.twig'|file_link(0) }}">templates/foo/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+    <!-- Implémentation en vue js -->
+  {# <script>
+    var app = new Vue({
+      el: "#all",
+      data: {
+        menus : [
+          {
+            titre:"Listes des specialistes",
+            texte: "Vous aider pour les cultures que vous voulez",
+            source:"../assets/itineraire.jpg",
+            ref:"listevulga.html"
+          },
+          {
+            titre:"Nos données brutes",
+            texte: "Pour vous guider avec le changement de climat et la plantation",
+            source:"../assets/calendrier1.png",
+            ref:"donneesbrutes.html"
+          },
+          {
+            titre:"Nos données traitées",
+            texte: "Avoir les bonnes techniques pour vos plantations",
+            source:"../assets/technique.jpg",
+            ref:"donnestraites.html"
+          }
+        ],
+      }
+    })
+  </script> #}
+   
+</body>
