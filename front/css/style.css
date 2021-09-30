@@ -6,8 +6,8 @@
   padding-right: 2vh;
   padding-left: 0%;
 }
-.heroPage{
-  background-image: url(../assets/cover.jpg);
+.heroPage1{
+  background-image: url(../assets/images/cover.jpg);
   overflow: visible;
   height: 60vh;
   background-attachment: fixed;
@@ -15,6 +15,16 @@
   padding-top: 200px;
   padding-left: 30px;
 }
+
+.heroPage{
+	background-image: url(../assets/cover.jpg);
+	overflow: visible;
+	height: 60vh;
+	background-attachment: fixed;
+	color: aliceblue;
+	padding-top: 200px;
+	padding-left: 30px;
+  }
 .card{
   border: none;
   margin-bottom: 10%;
