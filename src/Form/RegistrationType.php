@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -31,7 +32,7 @@ class RegistrationType extends AbstractType
             ->add('email', EmailType::class, $this->getConfiguration('Email', 'foo@exemple.com'))
             ->add('telephone', TextType::class, $this->getConfiguration('Téléphone', 'Votre numéro de téléphone'))
             ->add('region')
-            ->add('password')
+            ->add('password', PasswordType::class, ['label' => 'Mot de passe' ])
         ;
     }
 

@@ -20,24 +20,16 @@ class FooController extends AbstractController
     /**
      * @Route("/espace-vulgarisateur", name="vulgarisateur")
      */
-    public function index(): Response
+    public function vulgarisateur(): Response
     {
         
-        return $this->render('foo/index.html.twig', [
-            'controller_name' => 'FooController',
-        ]);
-    }
-    /**
-     * @Route("/espace-vulgarisateur/liste", name="vulgarisateur-liste")
-     */
-    public function listTechnicians(){
-
+        return $this->render('foo/index.html.twig');
     }
 
     /**
-     * @Route("/espace-vulgarisateur/donnees-brutes/{region}/{annee}", name="donnees-brutes")
+     * @Route("/espace-vulgarisateur/donnees-traitees/{region}/{annee}", name="donnees-brutes")
      */
-    public function aboutDonnee(DonneeRepository $data, PrecipitationRepository $precipitation, TemperatureRepository $temperature, SolRepository $sol, RegionRepository $region, MonthRepository $month, YearRepository $year, Request $request): Response
+    public function aboutDonnee(DonneeRepository $data, PrecipitationRepository $precipitations, TemperatureRepository $temperatures, SolRepository $sols, RegionRepository $region, MonthRepository $month, YearRepository $year, Request $request): Response
     {
         $regions = $region->findAll();
         $mois =  $month->findAll();
@@ -48,11 +40,33 @@ class FooController extends AbstractController
 
         $donnee = $data->findOneBy(['region' => $region, 'annee' => intval($annee)]);
 
+        $temperature = $temperatures->findOneBy(['donnee_id' => $donnee->getId()]);
+        $precipitation = $precipitations->findOneBy(['donnee_id' => $donnee->getId()]);
+        $sol = $sols->findOneBy(['donnee_id' => $donnee->getId()]);
+
         return $this->render('foo/detailDonnee.html.twig', [
             'regions' => $regions,
             'mois' => $mois,
             'annees' => $annees,
-            'donnee' => $donnee
+            'donnee' => $donnee,
+            'temperature' => $temperature,
+            'precipitation' => $precipitation,
+            'sol'=> $sol
         ]);
+    }
+
+    /**
+     * @Route("/espace-vulgarisateur/liste", name="vulgarisateur-liste")
+     */
+    public function listTechnicians(){
+
+    }
+    /**
+     * @Route("/espace-vulgarisateur/apropos/{id}", name="foo-about")
+     */
+    public function fooAbout(): Response
+    {
+        
+        return $this->render('$fooAbout.html.twig', []);
     }
 }

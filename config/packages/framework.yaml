@@ -18,6 +18,10 @@ framework:
         log: true
     ide: code-insiders
 
+    default_local: fr
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+
 when@test:
     framework:
         test: true

@@ -26,7 +26,7 @@ class CultureController extends AbstractController
 
         return $this->render('culture/cultures.html.twig', [
             'cultures' => $cultures,
-            'images' => $images
+            'images' => $images 
         ]);
     }
 
