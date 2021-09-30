@@ -24,6 +24,7 @@
 	color: aliceblue;
 	padding-top: 200px;
 	padding-left: 30px;
+	border: solid whitesmoke;
   }
 .card{
   border: none;
@@ -49,13 +50,23 @@ button{
   margin: 5% 1%;
 }
 .cardmenu{
-  padding-left: 10% ;
+  padding-left: 5% ;
 	border-left: dotted;
+	border-color: rgb(207, 40, 10);
 }
+p{
+	text-align: justify;
+	font-size: 1,2em;
+}
+.contact{
+	margin-left: 20%;
+	color: antiquewhite;
+}
+
 .cardmenu h3{
 	border: solid 1px;
 	border-radius: 50%;
-	width: 20rem;
+	width: 25rem;
 	padding: 30% 15%;
 	margin: 10% 15%;
 	background-color: rgb(214, 134, 14);
@@ -63,6 +74,12 @@ button{
 }
 .download{
   background-color: rgb(130, 202, 130);
+}
+.culture{
+	margin-bottom: 10%;
+}
+.connaissances h5{
+	margin-top: 10%;
 }
 .download a{
   text-decoration: none;

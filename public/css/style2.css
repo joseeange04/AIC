@@ -203,6 +203,14 @@ th, tr, td{
 	vertical-align: middle;
 	border-radius: 50%;
 }
+.download{
+  background-color: rgb(130, 202, 130);
+}
+.download a{
+  text-decoration: none;
+  color: rgb(238, 237, 237);
+  font-weight: bold;
+}
 
 .progress-wrapper {
 	margin-bottom: 15px;
