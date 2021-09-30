@@ -13,23 +13,26 @@
        <div class="nom">
            <div class="nom_descrpt">
             <h1 class="titre">SOL</h1>
-            <p>Voici donc notre données traitées sur le SOL</p>
            </div>
            
-           <div class="nom_stat">
+           <div class="nom_stat1">
+               <h4>Statistique de taux d'argile par région</h4>
                 <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                 </script>
                 <canvas id="myChart1"></canvas>
                 <script>
-                    var xValues = ["janvier","fevrier","mars","avril","mai",
-                    "juin","juillet","août","septembre","octobre","novembre","decembre"];
+                    var xValues = ["Diana","Sava","Itasy","Analamanga","Vakinakaratra"
+                    , "Bongolava","Sofia","Boeny","Bestiboka","Melaky","Alaotra Mangoro",
+                    "Antsinanana","Analanjirofo","Amoron'i Mania","Haute Matsiatra",
+                    "Vatovavy Fitovinany","Atsimo Antsinanana","Ihorombe","Menabe",
+                    "Atsimo andrefana","Androy","Anosy"];
                     new Chart("myChart1", {
                     type: "line",
                     data: {
                         labels: xValues,
                         datasets: [{ 
-                        data: [...Array(24).keys()],
+                        data: [40,40,20,50,35,25,20,20,30,22,35,15,12,30,35,20,12,10,25,20,10,20],
                         borderColor: "green",
                         fill: false
                         }]
@@ -39,30 +42,62 @@
                     }
                     });
                 </script>
-   
            </div>
+
+           <div class="nom_stat2">
+            <h4>Statistique de taux de sable par région</h4>
+            <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+            </script>
+            <canvas id="myChart11"></canvas>
+            <script>
+                var xValues = ["Diana","Sava","Itasy","Analamanga","Vakinakaratra"
+                , "Bongolava","Sofia","Boeny","Bestiboka","Melaky","Alaotra Mangoro",
+                "Antsinanana","Analanjirofo","Amoron'i Mania","Haute Matsiatra",
+                "Vatovavy Fitovinany","Atsimo Antsinanana","Ihorombe","Menabe",
+                "Atsimo andrefana","Androy","Anosy"];
+                new Chart("myChart11", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{ 
+                    data: [30,30,30,10,17,25,50,60,40,40,40,60,63,50,40,50,48,50,30,40,70,60],
+                    borderColor: "green",
+                    fill: false
+                    }]
+                },
+                options: {
+                    legend: {display: false}
+                }
+                });
+            </script>
+       </div>
        </div>
        <!-- --------------------------------------------------------------------------------------- -->
         <div class="nom">
             <div class="nom_descrpt">
                 <h1 class="titre">TEMPERATURE</h1>
-                <p>Voici donc notre données traitées sur la TEMPERATURE</p>
+                <h2>Mois de Mars 2021</h2>
             </div>
             
-            <div class="nom_stat">
+            <div class="nom_stat1">
+                <h4>Temperature plus chaude(en °C)</h4>
+                <h4></h4>
                 <script
                     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                 </script>
                 <canvas id="myChart2"></canvas>
                 <script>
-                    var xValues = ["janvier","fevrier","mars","avril","mai",
-                    "juin","juillet","août","septembre","octobre","novembre","decembre"];
+                    var xValues = ["Amoron'i Mania","Analamanga","Analanjirofo","Androy","Anosy",
+                    "Atsimo Andrefana","Atsimo Antsinanana","Bestiboka","Boeny","Bongolava","Diana","Sava"
+                    ,"Haute Matsiatra","Ihorombe","Itasy","Melaky","Menabe","Sava","Sofia","Vakinakartra"
+                    ,"Vatovay Fitovinany"];
                     new Chart("myChart2", {
                     type: "line",
                     data: {
                         labels: xValues,
                         datasets: [{ 
-                        data: [...Array(24).keys()],
+                        data: [21,21,23,25,24,26,24,25,27,22,25,22,23,21,26,26,24,25,20,24],
                         borderColor: "red",
                         fill: false
                         }]
@@ -73,29 +108,54 @@
                     });
                 </script>
             </div>
+            <div class="nom_stat2">
+                <h4>Temperature Normale à plus chaude(en °C)</h4>
+                <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+                </script>
+                <canvas id="myChart22"></canvas>
+                <script>
+                    var xValues = ["Alaotra Mangoro","Analanjirofo","Antsinana","Betsiboka","sofia"];
+                    new Chart("myChart22", {
+                    type: "line",
+                    data: {
+                        labels: xValues,
+                        datasets: [{ 
+                        data: [22,23,23,24,25],
+                        borderColor: "red",
+                        fill: false
+                        }]
+                    },
+                    options: {
+                        legend: {display: false}
+                    }
+                    });
+                </script>
+           </div>
         
         </div>
 <!-- ---------------------------------------------------------------------------------------------- -->
         <div class="nom">
             <div class="nom_descrpt">
             <h1 class="titre">PRECIPITATION</h1>
-            <p>Voici donc notre données traitées sur la PRÉCIPITATION</p>
             </div>
             
-            <div class="nom_stat">
+            <div class="nom_stat1">
+                <h4>Précipitation normale à superieure à la normale (en mm)</h4>
                 <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                 </script>
                 <canvas id="myChart3"></canvas>
                 <script>
-                    var xValues = ["janvier","fevrier","mars","avril","mai",
-                                    "juin","juillet","août","septembre","octobre","novembre","decembre"];
+                    var xValues = ["Sava","Amoron'i Mania","Atsimo Antsinana","Haute Mahatsiatra","Ihorombe"
+                    ,"Vatovavy Fitovinany","Alaotra Mangoro","Analanjirofo","Antsinana","Androy","Anosy",
+                    "Atsimo Andrefana","Menabe","Melaky"];
                     new Chart("myChart3", {
                     type: "line",
                     data: {
                         labels: xValues,
                         datasets: [{ 
-                        data: [...Array(24).keys()],
+                        data: [326,274,340,198,128,405,267,511,411,67,152,84,201,233],
                         borderColor: "blue",
                         fill: false
                         }]
@@ -106,6 +166,31 @@
                     });
                 </script>
             </div>
+            <div class="nom_stat2">
+                <h4>Précipitation normale à inferieure à la normale (en mm)</h4>
+                <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+                </script>
+                <canvas id="myChart33"></canvas>
+                <script>
+                    var xValues = ["Analamanga","Bongolava","Itasy","Vakinakaratra","Sava","Amoron'i Mania"
+                    ,"Bestiboka","Boeny"];
+                    new Chart("myChart33", {
+                    type: "line",
+                    data: {
+                        labels: xValues,
+                        datasets: [{ 
+                        data: [185,248,248,227,294,251,252,214,275,227,200,261],
+                        borderColor: "blue",
+                        fill: false
+                        }]
+                    },
+                    options: {
+                        legend: {display: false}
+                    }
+                    });
+                </script>
+           </div>
         </div>  
     </center>
 </body>
