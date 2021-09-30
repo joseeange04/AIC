@@ -1,0 +1,287 @@
+
+/* -----------------------------------DONNES TRAITÉS------------------------------------------------ */
+.nom{
+    border:1px solid;
+    width: 80%;
+    height: 600px;
+    margin-top: 20px;
+    border-radius: 3%;
+
+}
+.nom_stat{
+    border: 1px solid;
+    height: 450px;
+    width: 80%;
+    border-radius: 3%;
+}
+#myChart, #myChart1{
+    width:100%; 
+    height: 370px;
+}
+.nom_descrpt{
+    width: 80%;
+}
+
+.titre{
+    text-decoration: underline;
+}
+
+@media all and (min-device-width : 40px) and (max-device-width: 216px){
+    .nom{
+        border:1px solid;
+        width: 80%;
+        height: 600px;
+        margin-top: 20px;
+        border-radius: 3%;
+    
+    }
+    .nom_stat{
+        border: 1px solid;
+        height: 200px;
+        width: 80%;
+        border-radius: 3%;
+    }
+    #myChart, #myChart1{
+        width: 100%; 
+        height: 100px;
+    }
+    .nom_descrpt{
+        width: 80%;
+    }
+    
+    .titre{
+        text-decoration: underline;
+    }
+}
+
+@media all and (min-device-width : 220px) and (max-device-width: 506px){
+    .nom{
+        border:1px solid;
+        width: 80%;
+        height: 600px;
+        margin-top: 20px;
+        border-radius: 3%;
+    
+    }
+    .nom_stat{
+        border: 1px solid;
+        height: 350px;
+        width: 80%;
+        border-radius: 3%;
+    }
+    .nom_descrpt{
+        width: 80%;
+    }
+    #myChart1, #myChart2, #myChart3{
+        width:100%; 
+        height: 470px;
+    }
+    .titre{
+        text-decoration: underline;
+    }
+}
+/* ------------------------------------DONNES BRUTES------------------------------------------------ */
+.nom_brute{
+    border:1px solid;
+    width: 80%;
+    height: 600px;
+    margin-top: 20px;
+    border-radius: 3%;
+}
+.nom_stat_brute{
+    height: 300px;
+    width: 80%;
+    border-radius: 3%;
+}
+.nom_descrpt_brute{
+    width: 80%;
+}
+
+/* .titre{
+    text-decoration: underline;
+} */
+
+.telechargement{
+    width: 80%;
+    height: 55px;
+    /* border: 1px solid; */
+}
+.icon{
+    width:15%;
+    /* border:1px solid; */
+    float: right;
+    /* margin-top: 1%; */
+    margin-right:15%;
+}
+
+.icon-download{
+    width:35%;
+    height: 35%;
+    margin-right:50%;
+}
+
+.texte{
+    float: left;
+    /* border: 1px solid; */
+    margin-left: 10%;
+}
+
+.photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+}
+.photo_sol{
+    width: 60%;
+    height: 100%;
+    border-radius: 3%;
+}
+
+@media all and (max-device-width : 420px) {
+    .nom_brute{
+        width: 90%;
+        height: 600px;
+    }
+    .nom_stat_brute{
+        height: 200px;
+        width: 95%;
+    }
+    .nom_descrpt_brute{
+        width: 90%;
+    }
+    .telechargement{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        height: 15px;
+    }
+    .icon{
+        width: 15%;
+        margin-right:10%;
+    }
+    .icon-download{
+        width: 40px;
+        height: 40px;
+        padding: 20px 0px 0px 10px;
+    }
+}
+
+@media all and (min-device-width : 420px) and (max-device-width: 969px ){
+    .nom_brute{
+        width: 90%;
+        height: 600px;
+    }
+    .nom_stat_brute{
+        height: 250px;
+        width: 95%;
+    }
+    .nom_descrpt_brute{
+        width: 95%;
+    }
+    
+    .telechargement{
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 30px;
+    }
+    .icon{
+        width:15%;
+        margin-right:10%;
+    }
+    
+    .icon-download{
+        width: 40px;
+        height: 40px;
+        padding: 5px 0px 0px 10px;
+    }
+}
+
+@media all and (min-device-width : 970px) and (max-device-width: 1320px ){
+    .nom_brute{
+        border:1px solid;
+        width: 80%;
+        height: 600px;
+        margin-top: 20px;
+        border-radius: 3%;
+    }
+    .nom_stat_brute{
+        height: 300px;
+        width: 80%;
+        border-radius: 3%;
+    }
+    .nom_descrpt_brute{
+        width: 80%;
+    }
+    
+    .telechargement{
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 30px;
+    }
+    .icon{
+        width:15%;
+        margin-right:10%;
+    }
+    
+    .icon-download{
+        width: 40px;
+        height: 40px;
+        padding: 5px 0px 0px 10px;
+    }
+    
+    .texte{
+        float: left;
+        /* border: 1px solid; */
+        margin-left: 10%;
+    }
+    
+    .photo{
+        width: 100%;
+        height: 100%;
+        border-radius: 3%;
+    }
+    .photo_sol{
+        width: 60%;
+        height: 100%;
+        border-radius: 3%;
+    }
+}
+/* ------------------------------------LISTES SPECIALISTES------------------------------------------- */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.sp_sol{
+    border: 1px solid;
+    height: 200px;
+    width:30%;
+    border-radius: 3%;
+}
+.sp_temperature{
+    border: 1px solid;
+    height: 200px;
+    width:30%;
+    border-radius: 3%;
+}
+.sp_precipitation{
+    border: 1px solid;
+    height: 200px;
+    width:30%;
+    border-radius: 3%;
+}
+
+.details{
+    text-decoration: none;
+    color:black;
+}
+.liste_titre{
+    text-align: center;
+    text-decoration: underline;
+}
+.sp_titre{
+    text-decoration: underline;
+}
